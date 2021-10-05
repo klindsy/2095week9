@@ -47,6 +47,8 @@ module.exports = {
             if (err) return res.status(400).json(err);
             if (!movie) return res.status(404).json();
 
+            console.log(req.body.id);
+
             Actor.findOne({ _id: req.body.id }, function (err, actor) {
                 if (err) return res.status(400).json(err);
                 if (!actor) return res.status(404).json();
